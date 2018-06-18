@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  product-service:
+    build: ./python
+    volumes:
+      - ./python:/usr/src/app
+    ports:
+      - 5555:80
+  website:
+    image: php:apache
+    volumes: 
+      - ./website:/var/www/html
+    ports:
+      - 5556:80
+    depends_on:
+      - product-service
