@@ -12,13 +12,14 @@ services:
       - 54322:5432
 
   product-service:
-    build: ./python
+    restart: always
+    build: python
     volumes:
       - ./python:/usr/src/app
     ports:
       - 5555:80
     depends_on:
-     - postgres
+      - postgres
 
   website:
     image: php:apache

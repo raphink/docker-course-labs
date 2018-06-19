@@ -1,4 +1,4 @@
 FROM python:3-onbuild
-COPY . /usr/src/app 
-CMD ["python", "api.py"]
-CMD ["python", "db_create.py"]
+COPY . /usr/src/app
+CMD  ["sh", "-c", "python db_create.py && python api.py"]
+

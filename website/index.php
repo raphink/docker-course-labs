@@ -19,5 +19,15 @@
 
             ?>
         </ul>
+        <ul>
+        <h1> Using the database </h1>
+         <?php
+             $jsons = file_get_contents('http://product-service/db');
+             $results = json_decode($jsons);
+             foreach ($results as $result) {
+                 echo "<li>$result</li>";
+            }
+            ?>
+        </ul>
     </body>
 </html>
