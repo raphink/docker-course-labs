@@ -8,7 +8,7 @@
         <ul>
             <?php
 
-            $json = file_get_contents('http://product-service/');
+            $json = file_get_contents('http://pyapp/');
             $obj = json_decode($json);
 
             $products = $obj->products;
