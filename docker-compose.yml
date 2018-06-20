@@ -3,14 +3,12 @@ version: '2'
 services:
   product-service:
     build: ./python
-    volumes:
-      - ./python:/usr/src/app
+    image: camptocamp/python_app:latest
     ports:
       - 5555:80
   website:
-    image: php:apache
-    volumes: 
-      - ./website:/var/www/html
+    build: ./website
+    image: camptocamp/php_app:latest
     ports:
       - 5556:80
     depends_on:
