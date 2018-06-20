@@ -2,16 +2,16 @@ version: '2'
 
 services:
   product-service:
-    build: ./python
+    build: QUOI
     volumes:
-      - ./python:/usr/src/app
+      - QUOI:VERS?
     ports:
-      - 5555:80
+      - XXXX:XX
   website:
-    image: php:apache
+    image: IMAGE
     volumes: 
-      - ./website:/var/www/html
+      - .QUOI:VERS?
     ports:
-      - 5556:80
+      - XXXXX:XX
     depends_on:
-      - product-service
+      - XXXXXXXXXXXXXXXXX
