@@ -2,14 +2,16 @@ version: '2'
 
 services:
   product-service:
-    build: QUOI
+    build: ./python
+    image: camptocamp/python_app:latest
     volumes:
       - QUOI:VERS?
     ports:
       - XXXX:XX
   website:
-    image: IMAGE
-    volumes: 
+    build: ./website
+    image: camptocamp/php_app:latest
+    volumes:
       - .QUOI:VERS?
     ports:
       - XXXXX:XX
